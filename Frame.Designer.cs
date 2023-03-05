@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ElectricityBill
 {
-    partial class ElectricityLayout
+    partial class Frame
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace ElectricityBill
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ElectricityLayout));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frame));
             this.labelHeader = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelOldNumber = new System.Windows.Forms.Label();
@@ -52,12 +52,12 @@ namespace ElectricityBill
             this.Index = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ClientQuota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClientValuation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientOldNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientNewNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientConsuma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientMoney = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RQuota = new System.Windows.Forms.Label();
+            this.RValuation = new System.Windows.Forms.Label();
             this.Copyright = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -97,9 +97,9 @@ namespace ElectricityBill
             this.labelQuota.Font = new System.Drawing.Font("Arial", 9F);
             this.labelQuota.Location = new System.Drawing.Point(48, 128);
             this.labelQuota.Name = "labelQuota";
-            this.labelQuota.Size = new System.Drawing.Size(64, 15);
+            this.labelQuota.Size = new System.Drawing.Size(56, 15);
             this.labelQuota.TabIndex = 3;
-            this.labelQuota.Text = "Định mức:";
+            this.labelQuota.Text = "Định giá:";
             // 
             // labelLocation
             // 
@@ -144,6 +144,7 @@ namespace ElectricityBill
             this.CLocation.Name = "CLocation";
             this.CLocation.Size = new System.Drawing.Size(360, 23);
             this.CLocation.TabIndex = 7;
+            this.CLocation.SelectedIndexChanged += new System.EventHandler(this.CLocation_SelectedIndexChanged);
             // 
             // COldNumber
             // 
@@ -228,7 +229,7 @@ namespace ElectricityBill
             this.Index,
             this.ClientName,
             this.ClientLocation,
-            this.ClientQuota,
+            this.ClientValuation,
             this.ClientOldNumber,
             this.ClientNewNumber,
             this.ClientConsuma,
@@ -259,10 +260,10 @@ namespace ElectricityBill
             this.ClientLocation.Text = "Khu vực";
             this.ClientLocation.Width = 75;
             // 
-            // ClientQuota
+            // ClientValuation
             // 
-            this.ClientQuota.Text = "Định mức";
-            this.ClientQuota.Width = 104;
+            this.ClientValuation.Text = "Định giá";
+            this.ClientValuation.Width = 104;
             // 
             // ClientOldNumber
             // 
@@ -282,14 +283,14 @@ namespace ElectricityBill
             this.ClientMoney.Text = "Thành tiền";
             this.ClientMoney.Width = 135;
             // 
-            // RQuota
+            // RValuation
             // 
-            this.RQuota.AutoSize = true;
-            this.RQuota.Font = new System.Drawing.Font("Arial", 9F);
-            this.RQuota.Location = new System.Drawing.Point(160, 128);
-            this.RQuota.Name = "RQuota";
-            this.RQuota.Size = new System.Drawing.Size(0, 15);
-            this.RQuota.TabIndex = 18;
+            this.RValuation.AutoSize = true;
+            this.RValuation.Font = new System.Drawing.Font("Arial", 9F);
+            this.RValuation.Location = new System.Drawing.Point(160, 128);
+            this.RValuation.Name = "RValuation";
+            this.RValuation.Size = new System.Drawing.Size(0, 15);
+            this.RValuation.TabIndex = 18;
             // 
             // Copyright
             // 
@@ -304,13 +305,13 @@ namespace ElectricityBill
             this.Copyright.Text = "Copyright ©️ 2023 MeewMeew";
             this.Copyright.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Copyright_LinkClicked);
             // 
-            // ElectricityLayout
+            // Frame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 649);
             this.Controls.Add(this.Copyright);
-            this.Controls.Add(this.RQuota);
+            this.Controls.Add(this.RValuation);
             this.Controls.Add(this.BillList);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.BtnCalc);
@@ -331,7 +332,7 @@ namespace ElectricityBill
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ElectricityLayout";
+            this.Name = "Frame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Electricity Bill";
             this.ResumeLayout(false);
@@ -361,12 +362,12 @@ namespace ElectricityBill
         private System.Windows.Forms.ColumnHeader Index;
         private System.Windows.Forms.ColumnHeader ClientName;
         private System.Windows.Forms.ColumnHeader ClientLocation;
-        private System.Windows.Forms.ColumnHeader ClientQuota;
+        private System.Windows.Forms.ColumnHeader ClientValuation;
         private System.Windows.Forms.ColumnHeader ClientOldNumber;
         private System.Windows.Forms.ColumnHeader ClientNewNumber;
         private System.Windows.Forms.ColumnHeader ClientConsuma;
         private System.Windows.Forms.ColumnHeader ClientMoney;
-        private System.Windows.Forms.Label RQuota;
+        private System.Windows.Forms.Label RValuation;
         private System.Windows.Forms.LinkLabel Copyright;
     }
 }

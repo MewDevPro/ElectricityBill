@@ -16,7 +16,7 @@ namespace ElectricityBill
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ElectricityLayout());
+            Application.Run(new Frame());
         }
     }
 }

@@ -75,8 +75,6 @@ namespace ElectricityBill
             CLocation.SelectedIndex = 0;
         }
 
-
-
         private int GetValuation(int location)
         {
             int valuation = 0;
